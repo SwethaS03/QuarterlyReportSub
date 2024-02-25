@@ -1,6 +1,6 @@
 import React from 'react';
 import "./AdminCards.css";
-import addUserIcon from "../components/images/addUser.jpg";
+import addUserIcon from "../../images/addUser.svg";
 
 const AdminCards = () => {
 
@@ -9,11 +9,11 @@ const AdminCards = () => {
     };
 
     return (
-        <div className="card" onClick={onClick}>
+        <div className="card" onClick={handleClick}>
             <img src= {addUserIcon} alt="AdminCards" className="card-image" />
-            <h2 className="card-heading">Add User</h2>
+            <h2 className="card-heading">Add Department</h2>
             <hr className="card-line" />
-            <p className="card-description">Add more users to the already existing list of admins.</p>
+            <p className="card-description">Add more departments to the existing list of departments.</p>
         </div>
     );
 };
