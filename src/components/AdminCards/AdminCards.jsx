@@ -1,9 +1,9 @@
 import React from 'react';
 import "./AdminCards.css";
-import addUserIcon from "../images/addUser.svg";
+import addUserIcon from "../components/images/addUser.jpg";
 
 const AdminCards = () => {
-  
+
     const handleClick = () => {
         // Handle login logic here
     };
