@@ -1,16 +1,18 @@
 .button {
     background-color: #000000;
-    padding: 5px 25px;
-    color: #DFEBF2;
-    /* font-family: ""; */
-    font-size: 1.5rem;
+    padding: 10px 120px;
+    color: #ffffff;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
     border-radius: 17px;
     cursor: pointer;
     border-color: #000000;
 }
 .button:hover {
-    background-color: #565656;
-    border-color: #565656;
+    background-color: #303030;
+    border-color: #303030;
 }
 
 .button:focus {
@@ -20,6 +22,6 @@
 @media (max-width: 768px) {
     .button {
         width: 150px;
-        font-size: 20px;
+        font-size: 18px;
     }
 } 
