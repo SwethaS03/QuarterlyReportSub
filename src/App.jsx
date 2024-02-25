@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import LoginPage from './pages/LoginPage';
+import DownloadPage from '.'
 import './App.css'
 
 function App() {
