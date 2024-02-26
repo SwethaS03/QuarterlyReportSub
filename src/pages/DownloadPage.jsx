@@ -3,7 +3,7 @@ import DownloadButton from "../components/DownloadButton/DownloadButton";
 function DownloadPage() {
     return (
   
-        <div className="login-page">
+        <div className="download-button">
           <DownloadButton/>
         </div>
     );
