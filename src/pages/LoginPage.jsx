@@ -1,5 +1,6 @@
 import AddButton from "../components/AddButton/AddButton";
 import AdminCards from "../components/AdminCards/AdminCards";
+import QuarterRep from "../components/QuarterRep/QuarterRep";
 
 //import "../index.css";
 
@@ -8,7 +9,8 @@ function LoginPage() {
 
       <div className="login-page">
         {/* <AddButton /> */}
-        <AdminCards />
+        {/* <AdminCards /> */}
+        <QuarterRep />
 
       </div>
   );
