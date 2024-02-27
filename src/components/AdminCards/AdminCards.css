@@ -59,7 +59,7 @@
 }
 
 @media (max-width: 768px) {
-    .button {
+    .cards-container {
         width: 100%;
         max-width: 300px;
     }
