@@ -1,6 +1,5 @@
 import AddButton from "../components/AddButton/AddButton";
 import AdminCards from "../components/AdminCards/AdminCards";
-import OrderCard from "../components/OrderCard/OrderCard";
 
 //import "../index.css";
 function LoginPage() {
@@ -8,7 +7,7 @@ function LoginPage() {
 
       <div className="login-page">
         {/* <AddButton /> */}
-        <OrderCard />
+        <AdminCards />
 
       </div>
   );
