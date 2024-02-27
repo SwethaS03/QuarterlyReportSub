@@ -1,7 +1,5 @@
-// YearDropdown.jsx
-
 import React, { useState } from 'react';
-import "./YearDropdown.css"; // Import the associated CSS file
+import "./YearDropdown.css"; 
 
 const YearDropdown = () => {
     const [selectedYear, setSelectedYear] = useState(null);
@@ -9,29 +7,26 @@ const YearDropdown = () => {
 
     const handleYearChange = (event) => {
         setSelectedYear(event.target.value);
-        // You can add additional logic here based on the selected year
+        
     };
 
-    return (
+    return(
         <div className="year-dropdown">
-            <label htmlFor="yearSelect">Select a Year:</label>
             <select
                 id="yearSelect"
                 value={selectedYear}
                 onChange={handleYearChange}
+                className='dropdown-select'
             >
-                <option value="" disabled>Select a Year</option>
                 {years.map((year) => (
                     <option key={year} value={year}>
                         {year}
                     </option>
                 ))}
             </select>
-            {selectedYear && (
-                <p>You selected: {selectedYear}</p>
-            )}
+
         </div>
-    );
+        );
 };
 
 export default YearDropdown;
