@@ -7,14 +7,16 @@
 
 
 .userCard{
-    width: 530px;
+    width: 500px;
     height: auto;
     border-radius: 19px;
     padding: 20px;
     border-width: 1px;
-    border-color: #FFD800;
+    background:
+            linear-gradient(#fff 0 0) padding-box,
+            linear-gradient(to bottom, #FFD800,
+                #FFF1A3) border-box;
     box-shadow: 0px 0px 31px rgba(0, 0, 0, 0.09);
-    flex-direction: row;
     background-color: white;
 }
 
@@ -39,7 +41,9 @@ p{
     font-weight: 400;
     font-style: normal;
     color: black;
-    padding: 0;
+    padding: 5px;
+    overflow-y: auto;
+    height: 350px;
 }
 
 .list-container {
@@ -59,3 +63,9 @@ hr {
     margin: 0px 0;
 }
 
+@media (max-width: 768px) {
+    .userCard {
+        width: 50%;
+        max-width: 300px;
+    }
+}

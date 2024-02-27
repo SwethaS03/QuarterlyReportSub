@@ -1,7 +1,7 @@
 import React from 'react';
 import "./ExistingUsersCard.css";
 
-const ExistingUserCard = () => {
+const ExistingUsersCard = () => {
     const handleClick = () => {
         // Handle login logic here
     };
@@ -10,8 +10,7 @@ const ExistingUserCard = () => {
         
         <div className="userCard">
             <h2>Departments</h2>
-            <div>
-                <ul className="user-list">
+                <div className="user-list">
                     <div className='list-container'>
                         <p>principal@psgtech.ac.in</p>
                         <p>Admin</p>
@@ -52,12 +51,10 @@ const ExistingUserCard = () => {
                         <p>Admin</p>
                     </div>
 
-                </ul>
+                </div>
             </div>
-            
-        </div>
         
     );
 };
 
-export default ExistingUserCard;
+export default ExistingUsersCard;
