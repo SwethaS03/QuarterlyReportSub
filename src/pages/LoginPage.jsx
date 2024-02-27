@@ -1,5 +1,5 @@
 // import LoginButton from "../components/LoginButton/LoginButton";
-import YearDropdown from "../components/YearDropdown/YearDropdown";
+import QuarterAdmin from "../components/QuarterAdmin/QuarterAdmin";
 
 //import "../index.css";
 function LoginPage() {
@@ -7,7 +7,7 @@ function LoginPage() {
 
       <div className="login-page">
         {/* <LoginButton /> */}
-        <YearDropdown />
+        <QuarterAdmin />
 
       </div>
   );

@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+.square-card {
+    width: 250px;
+    height: 250px;
+    background-color: #FFD800;
+    border-radius: 18px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top-left {
+    display: flex;
+    padding-left: 15px;
+    padding-right: 25px;
+    flex-direction: row;
+    background-color: #FFD800;
+    align-items: center;
+}
+
+.title {
+    font-family: "Urbanist", sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+    color: black;
+    margin: 0;
+    background-color: #FFD800;
+    
+}
+
+.gradient-number {
+    padding-left: 10px;
+    font-family: "Saira", sans-serif;
+    font-size: 76px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #FFD800;
+    
+}
+
+.bottom-left,
+.bottom-right {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFD800;
+}
+
+.month-icon-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 15px;
+}
+.month-range {
+    font-size: 18px;
+    padding-left: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    margin: 0;
+    text-align: center;
+    background-color: #FFD800;
+}
+
+.icon-container{
+    display: flex;
+    padding-left: 18px;
+}
+
+.rounded-outline {
+    border: 0px solid black; 
+    padding: 5px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 1px;
+    border-radius: 10px;
+  }
+
