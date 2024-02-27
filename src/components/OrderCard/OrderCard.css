@@ -18,12 +18,12 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    
+    box-shadow: 0px 0px 31px rgba(0, 0, 0, 0.1);
     background:
             linear-gradient(#fff 0 0) padding-box,
             linear-gradient(to bottom, #FFD800,
                 #FFF1A3) border-box;
-            
+    
     border-width: 3px;
     border-style: solid;
     border-radius: 20px;
