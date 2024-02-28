@@ -9,6 +9,7 @@
 
 .logincard {
     align-items: center;
+    background-color: transparent;
 }
 
 .form-group label {
@@ -38,4 +39,5 @@ p {
     font-style: normal;
     font-size: 20px;
     color: black;
+    background-color: white;
 }
