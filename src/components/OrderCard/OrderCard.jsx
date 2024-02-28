@@ -14,7 +14,7 @@ const OrderCard = () => {
                 <p>Principal</p>
             </div>
             <div className="card-number">
-                <span>0</span>
+                <input type='number' placeholder='0' ></input>
             </div>
         </div>
         

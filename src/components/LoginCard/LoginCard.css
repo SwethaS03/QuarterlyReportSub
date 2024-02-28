@@ -24,7 +24,8 @@ p{
     font-weight: 100;
     font-style: normal;
     font-size: 14px;
-    text-align: right;
+    padding-left: 150%;
+    white-space: nowrap;
 }
 
 .form-group input {
