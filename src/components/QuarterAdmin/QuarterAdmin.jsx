@@ -5,7 +5,7 @@ const SquareCard = () => {
     return (
         <div className="square-card">
             <div className="top-left">
-                <h2 className="title">Quarter</h2>
+                <h2 className="quarter-title">Quarter</h2>
                 <div className="gradient-number">01</div>
             </div>
             <div className='month-icon-container'>

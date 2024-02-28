@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import LoginPage from './pages/LoginPage';
+import DownloadPage from './pages/DownloadPage';
 
 import './App.css'
+import QuarterAdminPage from './pages/QuarterAdminPage';
 
 function App() {
   return(
-    <LoginPage></LoginPage>
+    <QuarterAdminPage></QuarterAdminPage>
 
   );
   // const { user } = useContext(AuthContext);
