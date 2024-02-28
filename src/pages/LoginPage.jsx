@@ -3,30 +3,24 @@ import React from "react";
 import psg from "/images/psg-logo-name.svg";
 import background from "/images/vector.svg";
 
-import "./LoginPage.css"
+import "./LoginPage.css";
 
-function LoginPage() {
+function LoginPage({ onLogin }) {
   return (
-    <div className='default-bg'>
-      <img className='psg-image' src={psg}></img>
+    <div className="default-bg">
+      <img className="psg-image" src={psg}></img>
       <div className="parent-container">
-
         <div className="left-cotainer">
-
-          <div className='img-container'>
-            <LoginCard />
+          <div className="img-container">
+            <LoginCard onLogin={onLogin} />
           </div>
         </div>
         <div className="right-cotainer">
-          <img className='vector-img' src={background}></img>
+          <img className="vector-img" src={background}></img>
         </div>
       </div>
     </div>
   );
-};
-
-
-
-
+}
 
 export default LoginPage;

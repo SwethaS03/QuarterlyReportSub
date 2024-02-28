@@ -1,9 +1,10 @@
-import jwt_decode, { JwtPayload } from "jwt-decode"
+import { jwtDecode } from "jwt-decode";
+
 export function isAuthenticated() {
   try {
     const authToken = localStorage.getItem('AUTH_TOKEN')
     if (authToken) {
-      const jwtInfo = jwt_decode(authToken)
+      const jwtInfo = jwtDecode(authToken)
       if (jwtInfo.exp && Date.now() >= jwtInfo.exp * 1000) {
         return false
       }
@@ -13,4 +14,9 @@ export function isAuthenticated() {
   } catch (error) {
     return false
   }
+}
+
+export function logout() {
+  localStorage.removeItem('AUTH_TOKEN')
+  localStorage.removeItem('USER')
 }

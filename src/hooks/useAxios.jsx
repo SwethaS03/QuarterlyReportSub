@@ -1,15 +1,14 @@
 import axios from "axios";
-import { KRIYA_HOST } from "../constants/data";
 export default function useAxios() {
   const response = { isError: false };
-  const baseURL = KRIYA_HOST || "http://localhost:3000";
+  const baseURL = "http://localhost:3000";
   let token = localStorage.getItem("AUTH_TOKEN");
   const axiosInstance = axios.create({
     baseURL,
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: token ? `Bearer ${String(token)} `: "",
+      Authorization: token ? `Bearer ${String(token)} ` : "",
     },
   });
 

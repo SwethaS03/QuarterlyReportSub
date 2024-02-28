@@ -1,20 +1,20 @@
 [
-    {	
-		"ImageURL": "/images/addUser.svg",
-        "title": "Add Department",
-        "description":"Add more departments to the existing list of departments.",
-        "navigate":"/add-department"
-    },
-    {
-        "ImageURL": "/images/downloadCard.svg",
-        "title": "Download",
-        "description":"Extend the deadline of the pending sections and download the consolidated report.",
-        "navigate":"../../pages/DownloadPage"
-    },
-    {
-        "ImageURL": "/images/modifyOrder.svg",
-        "title": "Modify Order",
-        "description":"Modify order to which you wish to receive each section’s report.",
-        "navigate":"../../pages/ModifyOrderPage"
-    } 
+  {
+    "ImageURL": "/images/addUser.svg",
+    "title": "Add Department",
+    "description": "Add more departments to the existing list of departments.",
+    "navigate": "/add-department"
+  },
+  {
+    "ImageURL": "/images/downloadCard.svg",
+    "title": "Download",
+    "description": "Extend the deadline of the pending sections and download the consolidated report.",
+    "navigate": "/download"
+  },
+  {
+    "ImageURL": "/images/modifyOrder.svg",
+    "title": "Modify Order",
+    "description": "Modify order to which you wish to receive each section’s report.",
+    "navigate": "/modify-order"
+  }
 ]
