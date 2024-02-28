@@ -1,26 +1,13 @@
-import { useState } from 'react'
-import LoginPage from './pages/LoginPage';
-
-import './App.css'
+import "./App.css";
+import LoginPage from "./pages/LoginPage";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  return(
-    <LoginPage></LoginPage>
-
+  return (
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+    </Routes>
   );
-  // const { user } = useContext(AuthContext);
-  // console.log(user);
-  // return (
-  //   <BrowserRouter>
-  //     <Routes>
-  //       <Route 
-  //         path="/" 
-  //         element=
-  //         {<LoginPage />} 
-  //       />
-  //     </Routes>
-  //   </BrowserRouter>
-  // );
 }
 
 export default App;
