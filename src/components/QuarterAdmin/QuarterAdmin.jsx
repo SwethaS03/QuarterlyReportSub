@@ -14,7 +14,7 @@ const SquareCard = () => {
                 </div>
                 <div className='icon-container'>
                     <div className='rounded-outline'>
-                        <EditCalendarOutlinedIcon style={{ fontSize: '2.2rem', color: 'black'}}/>
+                        <EditCalendarOutlinedIcon style={{ fontSize: '1.5rem', color: 'black'}}/>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@ const SquareCard = () => {
     return (
         <div className="square-card">
             <div className="top-left">
-                <h2 className="title">Quarter</h2>
+                <h2 className="quarter-title">Quarter</h2>
                 <div className="gradient-number">01</div>
             </div>
             <div className='month-icon-container'>
@@ -17,10 +17,10 @@ const SquareCard = () => {
                 </div>
                 <div className='icon-container'>
                     <div className='rounded-outline'>
-                        <FileUploadOutlinedIcon style={{ fontSize: '2.6rem', color: 'black'}}/>
+                        <FileUploadOutlinedIcon style={{ fontSize: '1.5rem', color: 'black'}}/>
                     </div>
                     <div className='rounded-outline'>
-                        <FileDownloadOutlinedIcon style={{ fontSize: '2.6rem', color: 'black' }}/>
+                        <FileDownloadOutlinedIcon style={{ fontSize: '1.5rem', color: 'black' }}/>
                     </div>
                 </div>
             </div>

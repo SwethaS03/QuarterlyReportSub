@@ -2,8 +2,8 @@
 
 
 .square-card {
-    width: 250px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
     background-color: #FFD800;
     border-radius: 18px;
     padding: 25px;
@@ -14,7 +14,7 @@
 
 .top-left {
     display: flex;
-    padding-left: 15px;
+    padding-left: 5px;
     padding-right: 25px;
     flex-direction: row;
     background-color: #FFD800;
@@ -23,7 +23,7 @@
 
 .quarter-title {
     font-family: "Urbanist", sans-serif;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: normal;
     color: black;
     margin: 0;
@@ -34,7 +34,7 @@
 .gradient-number {
     padding-left: 10px;
     font-family: "Saira", sans-serif;
-    font-size: 76px;
+    font-size: 60px;
     font-weight: bold;
     color: #FFFFFF;
     background-color: #FFD800;
@@ -55,7 +55,7 @@
     gap: 15px;
 }
 .month-range {
-    font-size: 18px;
+    font-size: 14px;
     padding-left: 18px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;

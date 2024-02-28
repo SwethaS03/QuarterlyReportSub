@@ -9,7 +9,7 @@ const NavbarLogout = () => {
 
   return (
     <div className='navbar'>
-            <div className='title'>
+            <div className='navbar-title'>
                 <img className="psg-image" src= {psg} alt="psgLogo" />
                 <p className='outer-text'>Quarterly Report <span className='inner-text'>Submission</span></p>
             </div>

@@ -1,25 +1,28 @@
 import QuarterAdmin from "../components/QuarterAdmin/QuarterAdmin";
 import YearDropdown from "../components/YearDropdown/YearDropdown";
-import Navbar from "../components/NavbarBack&Logout/NavbarBack&Logout";
-
+import NavbarLogout from "../components/NavbarLogout/NavbarLogout";
+import "./QuarterAdminPage.css";
 
 //import "../index.css";
 function QuarterAdminPage() {
   return (
 
-      <div className="default-bg">
+      <div >
         <Navbar />
+        <YearDropdown />
         <div className="container">
-          <div className="title-container">
+          <div className="admin-title-container">
             <h3>QUARTER</h3>
             <h2>Selector</h2>
           </div>
+          
           <div className="grid-container">
-            <div className="grid-item">1</div>
-            <div className="grid-item">2</div>
-            <div className="grid-item">3</div>
-            <div className="grid-item">4</div>
+              <QuarterAdmin />
+              <QuarterAdmin />
+              <QuarterAdmin />
+              <QuarterAdmin />
           </div>
+          
         </div>
           
       </div>

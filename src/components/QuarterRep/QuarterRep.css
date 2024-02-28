@@ -2,11 +2,14 @@
 
 
 .square-card {
-    width: 250px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
     background-color: #FFD800;
     border-radius: 18px;
-    padding: 25px;
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,16 +17,16 @@
 
 .top-left {
     display: flex;
-    padding-left: 15px;
+    padding-left: 5px;
     padding-right: 25px;
     flex-direction: row;
     background-color: #FFD800;
     align-items: center;
 }
 
-.title {
+.quarter-title {
     font-family: "Urbanist", sans-serif;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: normal;
     color: black;
     margin: 0;
@@ -34,7 +37,7 @@
 .gradient-number {
     padding-left: 10px;
     font-family: "Saira", sans-serif;
-    font-size: 76px;
+    font-size: 50px;
     font-weight: bold;
     color: #FFFFFF;
     background-color: #FFD800;
@@ -52,10 +55,10 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-    gap: 20px;
+    gap: 15px;
 }
 .month-range {
-    font-size: 18px;
+    font-size: 14px;
     padding-left: 18px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -85,6 +88,6 @@
     outline-style: solid;
     outline-color: black;
     outline-width: 1px;
-    border-radius: 10px;
+    border-radius: 5px;
   }
 
