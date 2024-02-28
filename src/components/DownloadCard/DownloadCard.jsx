@@ -8,7 +8,7 @@ const DownloadCard = () => {
 
     return (
         
-        <div className="card">
+        <div className="download-card">
             <div className="text">
                 <h2>Section</h2>
                 <p>MoU Details</p>

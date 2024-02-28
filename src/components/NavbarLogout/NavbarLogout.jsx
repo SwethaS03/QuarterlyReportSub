@@ -10,12 +10,11 @@ const NavbarLogout = () => {
   return (
     <div className='navbar'>
             <div className='navbar-title'>
-                <img className="psg-image" src= {psg} alt="psgLogo" />
+                <img className="psg-image-navbar" src= {psg} alt="psgLogo" />
                 <p className='outer-text'>Quarterly Report <span className='inner-text'>Submission</span></p>
             </div>
-            <div className='button-container'>
-                    
-                    <button className='logout-button' onClick={handleLogout}>Logout</button>
+            <div className='navbar-button-container'>
+                    <button className='navbar-logout-button' onClick={handleLogout}>Logout</button>
             </div>
 
       

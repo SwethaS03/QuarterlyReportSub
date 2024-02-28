@@ -17,7 +17,7 @@
     margin-bottom: 0px;
 }
 
-p{
+.admin-card-content{
     cursor: pointer;
     color: black;
     font-family: "Be Vietnam Pro", sans-serif;

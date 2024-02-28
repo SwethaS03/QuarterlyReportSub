@@ -26,7 +26,7 @@
 }
 
 
-.psg-image {
+.psg-image-navbar {
     width: 50px;
     height: 50px;
 }
@@ -37,17 +37,18 @@
     font-style: normal;
     color: #4A4A4A;
     font-weight: 670;
+    padding:0%;
 }
 .inner-text{
     font-size: 22px;
     color: #FFD800;
 }
 
-.button-container{
+.navbar-button-container{
     padding-right: 30px;
 }
 
-.logout-button{
+.navbar-logout-button{
     background-color: #ffffff;
     padding: 8px 22px;
     color: #656565;
