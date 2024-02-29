@@ -8,15 +8,14 @@ import "./LoginPage.css";
 function LoginPage({ onLogin }) {
   return (
     <div className="default-bg">
-      <img className="psg-image" src={psg}></img>
-      <div className="parent-container">
-        <div className="left-cotainer">
-          <div className="img-container">
+      <div className="login-parent-container">         
+
+        <div className="login-left-cotainer">
+        <img className="login-psg-image" src={psg}></img>
             <LoginCard onLogin={onLogin} />
-          </div>
         </div>
-        <div className="right-cotainer">
-          <img className="vector-img" src={background}></img>
+        <div className="login-right-cotainer">
+          <img className="login-vector-img" src={background}></img>
         </div>
       </div>
     </div>
@@ -24,3 +23,4 @@ function LoginPage({ onLogin }) {
 }
 
 export default LoginPage;
+

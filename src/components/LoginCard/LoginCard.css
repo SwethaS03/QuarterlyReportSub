@@ -9,6 +9,7 @@
 
 .logincard{
     align-items: center;
+    text-align: right;
 }
 
 .form-group label {
@@ -24,7 +25,6 @@
     font-weight: 100;
     font-style: normal;
     font-size: 14px;
-    padding-left: 150%;
     white-space: nowrap;
 }
 
