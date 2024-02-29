@@ -1,60 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import "./ExistingUsersCard.css";
+import { useNavigate } from "react-router";
+import useAxios from "../../hooks/useAxios";
 
 const ExistingUsersCard = () => {
-    const handleClick = () => {
-        // Handle login logic here
-    };
+  const navigate = useNavigate();
+  const { getWithAuth } = useAxios();
+  const [existingUsers, setExistingUsers] = useState([]);
 
-    return (
-        
-        <div className="userCard">
-            <h2>Departments</h2>
-                <div className="user-list">
-                    <div className='list-container'>
-                        <p>principal@psgtech.ac.in</p>
-                        <p>Admin</p>
-                    </div>
-                    <hr />
-                    <div className='list-container'>
-                        <p>vsk@psgtech.ac.in</p>
-                        <p>Admin</p>
-                    </div>
-                    <hr />
-                    <div className='list-container'>
-                        <p>sugunapsg@gmail.com</p>
-                        <p>MoU Details</p>
-                    </div>
-                    <hr />
-                    <div className='list-container'>
-                        <p>coe@psgtech.ac.in</p>
-                        <p>Controller Of Examinations</p>
-                    </div>
-                    <hr />
-                    <div className='list-container'>
-                        <p>dean.pat@psgtech.ac.in</p>
-                        <p>Placement and Training</p>
-                    </div>
-                    <hr />
-                    <div className='list-container'>
-                        <p>dean.acad@psgtech.ac.in</p>
-                        <p>Academic Section</p>
-                    </div>
-                    <hr />
-                    <div className='list-container'>
-                        <p>acs@psgtech.ac.in</p>
-                        <p>Accounts</p>
-                    </div>
-                    <hr />
-                    <div className='list-container'>
-                        <p>dean.admn@psgtech.ac.in</p>
-                        <p>Admin</p>
-                    </div>
+  const fetchUsers = async () => {
+    const response = await getWithAuth("/user");
+    if (!response.isError) {
+      setExistingUsers(response.data);
+    } else {
+      alert("Error fetching users");
+    }
+  };
 
-                </div>
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+  return (
+    <div className="userCard">
+      <h2>Departments</h2>
+      <div className="user-list">
+        {existingUsers.map((user, index) => {
+          return (
+            <div key={index}>
+              <div className="list-container">
+                <p>{user.email}</p>
+                <p>{user.role}</p>
+              </div>
+              <hr />
             </div>
-        
-    );
+          );
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default ExistingUsersCard;

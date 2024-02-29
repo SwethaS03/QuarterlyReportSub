@@ -5,7 +5,7 @@
     margin: 0;
     display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
+    justify-content:start;
     gap: 250px;
     flex-grow: 1;
     width: 90%; 
@@ -13,56 +13,46 @@
 /* .login-top-container{
 
 } */
-.login-header-image{
-    height: 30%;
-    width: 70%;
-    margin-bottom: 15%;
-    padding-right: 10%;
-}
-
 .login-left-cotainer{
     background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: start;
     gap: 30px;
-    /* padding-left: 5%; */
+    padding-left: 5%;
     padding-top: 2%;
 }
-.login-top-container{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
+.login-top-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-.login-psg-image{
-    height:30%;
-    width: 23%;
-    padding-left: 0%;
-    /* padding-top: 4%; */
-    float: left;
+.login-psg-image {
+  height: 30%;
+  width: 23%;
+  padding-left: 0%;
+  /* padding-top: 4%; */
+  float: left;
 }
+
 /* .login-top-container{
 
 } */
 
 .login-h2 {
-    font-family: 'Montserrat';
-    font-weight: 750;
-    font-size: 33px;
-    color: #1C1C1B;
-    background-color: transparent;
-    margin: 0;
-
+  font-family: "Montserrat";
+  font-weight: 750;
+  font-size: 33px;
+  color: #1c1c1b;
+  background-color: transparent;
+  margin: 0;
 }
 
-.login-h2-span{
-    font-weight: 350;
-    text-align: center;
+.login-h2-span {
+  font-weight: 350;
+  text-align: center;
 }
-.login-vector-img{
-    margin-bottom: 5px; /* Keep the existing margin-bottom */
-    margin-top: -10px;
-}  
-
-
-
+.login-vector-img {
+  margin-bottom: 5px; /* Keep the existing margin-bottom */
+  margin-top: -10px;
+}

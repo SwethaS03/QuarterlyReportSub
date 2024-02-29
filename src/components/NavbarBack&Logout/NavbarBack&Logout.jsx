@@ -2,7 +2,9 @@ import React from "react";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import "./NavbarBack&Logout.css";
 import psg from "/images/psg.svg";
+import { useNavigate } from "react-router-dom";
 const NavbarBackAndLogout = () => {
+  const navigate = useNavigate();
   const handleLogout = () => {
     // Add your logout logic here
     localStorage.removeItem("AUTH_TOKEN");
@@ -20,7 +22,12 @@ const NavbarBackAndLogout = () => {
       </div>
       <div className="icon-button-container">
         <div className="rounded-outline">
-          <ArrowBackOutlinedIcon style={{ fontSize: "1.7rem" }} />
+          <ArrowBackOutlinedIcon
+            style={{ fontSize: "1.7rem" }}
+            onClick={() => {
+              navigate(-1);
+            }}
+          />
         </div>
 
         <button className="logout-button" onClick={handleLogout}>

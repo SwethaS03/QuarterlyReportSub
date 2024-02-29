@@ -27,9 +27,9 @@ export default function CustomRouter() {
 
   const RouterPath = useCallback(() => {
     switch (role) {
-      case "admin":
+      case "Admin":
         return <AdminRouter />;
-      case "representative":
+      case "Representative":
         return <RepRouter />;
     }
   }, [role]);
