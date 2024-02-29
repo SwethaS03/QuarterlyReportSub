@@ -1,32 +1,36 @@
-import React, { useState } from 'react';
-import "./YearDropdown.css"; 
+import React, { useState, useEffect } from "react";
+import "./YearDropdown.css";
 
-const YearDropdown = () => {
-    const [selectedYear, setSelectedYear] = useState(null);
-    const years = Array.from({ length: 10 }, (_, index) => new Date().getFullYear() - index);
+const YearDropdown = ({ selectedYear, setSelectedYear }) => {
+  const years = Array.from(
+    { length: 10 },
+    (_, index) => new Date().getFullYear() - index
+  );
 
-    const handleYearChange = (event) => {
-        setSelectedYear(event.target.value);
-        
-    };
+  useEffect(() => {
+    setSelectedYear(years[0]);
+  }, []);
 
-    return(
-        <div className="year-dropdown">
-            <select
-                id="yearSelect"
-                value={selectedYear}
-                onChange={handleYearChange}
-                className='dropdown-select'
-            >
-                {years.map((year) => (
-                    <option key={year} value={year}>
-                        {year}
-                    </option>
-                ))}
-            </select>
+  const handleYearChange = (event) => {
+    setSelectedYear(event.target.value);
+  };
 
-        </div>
-        );
+  return (
+    <div className="year-dropdown">
+      <select
+        id="yearSelect"
+        value={selectedYear}
+        onChange={handleYearChange}
+        className="dropdown-select"
+      >
+        {years.map((year) => (
+          <option key={year} value={year}>
+            {year}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
 };
 
 export default YearDropdown;
