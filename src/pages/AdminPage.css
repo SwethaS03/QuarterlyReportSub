@@ -4,20 +4,20 @@
     padding-top:4%;
 }
 
-.text-container{
+.admin-page-text-container{
     width:5%;
     padding-left: 48%;
     padding-top: 4%;
 }
 
-.card-line {
+.admin-page-card-line {
     width: 50%;
     height: 0.7px;
     background-color: #FFD800;
     /* margin: px; */
 }
 
-h2{
+.admin-page-h2{
     font-family: 'Montserrat';
     font-weight: 700;
     /* font-size: 18px; */

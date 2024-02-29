@@ -7,10 +7,10 @@ function AdminPage() {
   return (
       <div className='default-bg'>
         <NavbarLogout/>
-          <div className='text-card-container'>
-            <div className='text-container'>
-              <h2>Admin</h2>
-              <hr className="card-line" />
+          <div className='admin-page-text-card-container'>
+            <div className='admin-page-text-container'>
+              <h2 className='admin-page-h2'>Admin</h2>
+              <hr className="admin-page-card-line" />
             </div>
             <div className="admin-cards">
             <AdminCards />
