@@ -19,8 +19,13 @@
     flex-direction: column;
     justify-content: start;
     gap: 30px;
-    padding-left: 0%;
+    padding-left: 5%;
     padding-top: 2%;
+}
+.login-top-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .login-psg-image{
     height:30%;
@@ -33,6 +38,20 @@
 
 } */
 
+.login-h2 {
+    font-family: 'Montserrat';
+    font-weight: 750;
+    font-size: 33px;
+    color: #1C1C1B;
+    background-color: transparent;
+    margin: 0;
+
+}
+
+.login-h2-span{
+    font-weight: 350;
+    text-align: center;
+}
 .login-vector-img{
     margin-bottom: 5px; /* Keep the existing margin-bottom */
     margin-top: -10px;

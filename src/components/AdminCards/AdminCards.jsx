@@ -11,7 +11,7 @@ const AdminCards = () => {
         return (
           <div
             key={index}
-            className="card"
+            className="admin-comp-card"
             onClick={() => {
               navigate(cardData.navigate);
             }}
@@ -22,7 +22,7 @@ const AdminCards = () => {
               className="card-image"
             />
             <h2 className="card-heading">{cardData.title}</h2>
-            <hr className="card-line" />
+            <hr className="admin-card-line" />
             <p className="card-description">{cardData.description}</p>
           </div>
         );
