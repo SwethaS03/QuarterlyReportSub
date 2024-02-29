@@ -5,8 +5,7 @@ import CustomRouter from "./routes/customRouter";
 function App() {
   return (
     <div className="">
-      {/* <CustomRouter /> */}
-      <QuarterRepPage />
+      <CustomRouter />
     </div>
   );
 }

@@ -8,19 +8,17 @@ import "./LoginPage.css";
 function LoginPage({ onLogin }) {
   return (
     <div className="default-bg">
-      <div className="login-parent-container">         
-
+      <div className="login-parent-container">
         <div className="login-left-cotainer">
-          <div className='login-top-container'>
-            <h2 className='login-h2'>Quarterly Report</h2>
-            <h2 className='login-h2-span'>Submission</h2>
+          <div className="login-top-container">
+            <h2 className="login-h2">Quarterly Report</h2>
+            <h2 className="login-h2-span">Submission</h2>
           </div>
-        
-            <LoginCard onLogin={onLogin} />
+
+          <LoginCard onLogin={onLogin} />
         </div>
         <div className="login-right-cotainer">
           <img className="login-vector-img" src={background}></img>
-
         </div>
       </div>
     </div>
@@ -28,4 +26,3 @@ function LoginPage({ onLogin }) {
 }
 
 export default LoginPage;
-
