@@ -18,20 +18,12 @@
     margin-bottom: 0px;
 }
 
-.admin-card-content{
-    cursor: pointer;
-    color: black;
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 14px;
-    white-space: nowrap;
-}
+
 
 .form-group input {
     width: 250px;
     padding: 15px 40px 15px 10px;
-    padding-left: 30px;
+    /* padding-left: 30px; */
     border: 1px solid #000000;
     border-radius: 10px;
     font-family: "Be Vietnam Pro", sans-serif;

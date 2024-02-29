@@ -52,8 +52,7 @@ const LoginCard = ({ onLogin }) => {
               value={password}
               onChange={handlePasswordChange}
             />
-          </div>
-          <p className="admin-card-content">Forgot Password?</p>
+          </div><br/>
           <LoginButton />
         </div>
       </form>

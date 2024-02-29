@@ -10,6 +10,7 @@ function LoginPage({ onLogin }) {
     <div className="default-bg">
       <div className="login-parent-container">
         <div className="login-left-cotainer">
+        <img class="login-header-image" src={psg} alt="" />
           <div className='login-top-container'>
             <h2 className='login-h2'>Quarterly Report</h2>
             <h2 className='login-h2-span'>Submission</h2>
