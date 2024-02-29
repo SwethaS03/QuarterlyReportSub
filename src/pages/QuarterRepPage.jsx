@@ -13,8 +13,8 @@ function QuarterRepPage() {
         <YearDropdown />
         <div className="container">
           <div className="admin-title-container">
-            <h3>QUARTER</h3>
-            <h2>Selector</h2>
+            <h3 className='rep-h3'>QUARTER</h3>
+            <h2 className='rep-h2'>Selector</h2>
           </div>
           
           <div className="grid-container">

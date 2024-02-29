@@ -7,7 +7,7 @@ function DownloadPage() {
     return (
       <div className="default-bg">
         <Navbar />
-        <div className="container">
+        <div className="download-container">
           <div className="title-container">
             <h3>ADMIN</h3>
             <h2>Download</h2>

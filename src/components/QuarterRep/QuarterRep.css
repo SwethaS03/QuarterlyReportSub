@@ -17,16 +17,18 @@
 
 .top-left {
     display: flex;
-    padding-left: 5px;
-    padding-right: 25px;
-    flex-direction: row;
+    width: 100%;
+    /* padding-left: 5px;
+    padding-right: 25px; */
+    flex-direction: column;
     background-color: #FFD800;
-    align-items: center;
+    align-items: start;
+    justify-content: left;
 }
 
 .quarter-title {
     font-family: "Urbanist", sans-serif;
-    font-size: 25px;
+    font-size: 37px;
     font-weight: normal;
     color: black;
     margin: 0;
@@ -35,12 +37,15 @@
 }
 
 .gradient-number {
-    padding-left: 10px;
+    /* padding-left: 10px; */
     font-family: "Saira", sans-serif;
-    font-size: 50px;
+    font-size: 60px;
     font-weight: bold;
     color: #FFFFFF;
     background-color: #FFD800;
+    background: -webkit-linear-gradient(90deg,#FFD800 15%, #ffffff 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     
 }
 
@@ -52,14 +57,15 @@
 }
 
 .month-icon-container{
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 15px;
 }
 .month-range {
     font-size: 14px;
-    padding-left: 18px;
+    /* padding-left: 18px; */
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;

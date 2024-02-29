@@ -7,7 +7,7 @@ function ModifyPage() {
     return (
       <div className="default-bg">
         <Navbar />
-        <div className="container">
+        <div className="modify-order-container">
           <div className="title-container">
             <h3>ADMIN</h3>
             <h2>Modify User Order</h2>

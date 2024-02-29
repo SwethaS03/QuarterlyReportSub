@@ -1,29 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
 
-.square-card {
+.qadmin-square-card {
     width: 180px;
     height: 180px;
     background-color: #FFD800;
     border-radius: 18px;
-    padding: 25px;
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.top-left {
+.qadmin-top-left {
     display: flex;
-    padding-left: 5px;
-    padding-right: 25px;
-    flex-direction: row;
+    width: 100%;
+    /* padding-left: 5px;
+    padding-right: 25px; */
+    flex-direction: column;
     background-color: #FFD800;
-    align-items: center;
+    align-items: start;
+    justify-content: left;
 }
 
-.quarter-title {
+.qadmin-quarter-title {
     font-family: "Urbanist", sans-serif;
-    font-size: 30px;
+    font-size: 37px;
     font-weight: normal;
     color: black;
     margin: 0;
@@ -31,32 +36,35 @@
     
 }
 
-.gradient-number {
-    padding-left: 10px;
+.qadmin-gradient-number {
     font-family: "Saira", sans-serif;
     font-size: 60px;
     font-weight: bold;
     color: #FFFFFF;
     background-color: #FFD800;
+    background: -webkit-linear-gradient(90deg,#FFD800 15%, #ffffff 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     
 }
 
-.bottom-left,
-.bottom-right {
+.qadmin-bottom-left,
+.qadmin-bottom-right {
     display: flex;
     justify-content: space-between;
     background-color: #FFD800;
 }
 
-.month-icon-container{
+.qadmin-month-icon-container{
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: start;
-    gap: 15px;
+    gap: 45px;
 }
-.month-range {
+.qadmin-month-range {
     font-size: 14px;
-    padding-left: 18px;
+    /* padding-left: 18px; */
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -66,14 +74,18 @@
     background-color: #FFD800;
 }
 
-.icon-container{
+.qadmin-icon-container{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
     padding-left: 18px;
 }
 
-.rounded-outline {
+.qadmin-rounded-outline {
     border: 0px solid black; 
-    padding: 5px; 
+    padding: 2px; 
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -81,6 +93,6 @@
     outline-style: solid;
     outline-color: black;
     outline-width: 1px;
-    border-radius: 10px;
+    border-radius: 5px;
   }
 

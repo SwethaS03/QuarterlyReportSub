@@ -8,15 +8,15 @@ function QuarterAdminPage() {
   return (
 
       <div >
-        <Navbar />
+        <NavbarLogout />
         <YearDropdown />
-        <div className="container">
-          <div className="admin-title-container">
-            <h3>QUARTER</h3>
-            <h2>Selector</h2>
+        <div className="adm-container">
+          <div className="adm-title-container">
+            <h3 className="adm-h3">QUARTER</h3>
+            <h2 className="adm-h2">Selector</h2>
           </div>
           
-          <div className="grid-container">
+          <div className="adm-grid-container">
               <QuarterAdmin />
               <QuarterAdmin />
               <QuarterAdmin />
