@@ -9,19 +9,19 @@ function AddDepartmentPage() {
   return (
     <div className="default-bg">
       <NavbarBackAndLogout />
-      <div className="parent-container">
+      <div className="add-department-parent-container">
 
-        <div className="left-cotainer">
+        <div className="add-department-left-cotainer">
 
-          <div className="title-container">
-            <h3>ADMIN</h3>
-            <h1>Add Department</h1>
+          <div className="add-department-title-container">
+            <h3 className='add-department-h3'>ADMIN</h3>
+            <h1 className='add-department-h1'>Add Department</h1>
           </div>
           <div className='add-dept'>
             <AddDeptCard />
           </div>
         </div>
-        <div className="right-cotainer">
+        <div className="add-department-right-cotainer">
           <ExistingUsersCard />
         </div>
       </div>
