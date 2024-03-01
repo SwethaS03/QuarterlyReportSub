@@ -29,6 +29,12 @@ export default function useAxios() {
       if (method === "GET") {
         const { data } = await axiosInstance.get(url, { params: body });
         response.data = data;
+      } else if (method === "GET_FILE_WITH_AUTH") {
+        const { data } = await axiosInstance.get(url, {
+          params: body,
+          responseType: "arraybuffer",
+        });
+        response.data = data;
       } else if (method === "GET_WITHOUT_AUTH") {
         const { data } = await axios.get(url, { params: body });
         response.data = data;
@@ -37,6 +43,13 @@ export default function useAxios() {
         response.data = data;
       } else if (method === "POST") {
         const { data } = await axiosInstance.post(url, reqBody);
+        response.data = data;
+      } else if (method === "PUT_FILE_WITH_AUTH") {
+        const { data } = await axiosInstance.put(url, body, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
         response.data = data;
       } else if (method === "POST_WITHOUT_AUTH") {
         const config = {
@@ -69,6 +82,9 @@ export default function useAxios() {
     return await request("GET", url, data);
   }
 
+  async function getFileWithAuth(url, data) {
+    return await request("GET_FILE_WITH_AUTH", url, data);
+  }
   async function getWithoutAuth(url, data) {
     return await request("GET_WITHOUT_AUTH", url, data);
   }
@@ -88,13 +104,19 @@ export default function useAxios() {
     return await request("DELETE", url);
   };
 
+  async function putFileWithAuth(url, data) {
+    return await request("PUT_FILE_WITH_AUTH", url, data);
+  }
+
   return {
     getWithAuth,
+    getFileWithAuth,
     getWithoutAuth,
     postWithAuth,
     postWithoutAuth,
     putWithAuth,
     patchWithAuth,
     deleteWithAuth,
+    putFileWithAuth,
   };
 }

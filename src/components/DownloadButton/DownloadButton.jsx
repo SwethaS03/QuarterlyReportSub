@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 import "./DownloadButton.css";
 
-const DownloadButton = () => {
-    const handleClick = () => {
-        // Handle login logic here
-    };
-
-    return (
-        <button onClick={handleClick} className="button">
-            Download
-        </button>
-    );
+const DownloadButton = ({ disabled, yar, quarter, handleClick }) => {
+  return (
+    <button
+      disabled={disabled}
+      onClick={handleClick}
+      className={disabled ? "button-disabled" : "button"}
+    >
+      Download
+    </button>
+  );
 };
 
 export default DownloadButton;

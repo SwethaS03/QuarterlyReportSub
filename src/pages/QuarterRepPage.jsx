@@ -47,7 +47,9 @@ function QuarterRepPage() {
     let combinedArray = [];
     for (let i = 0; i < submissions.length; i++) {
       let submission = submissions[i];
-      let quarter = quarters[i];
+      let quarter = quarters.find(
+        (quarter) => quarter.quarter === submission.quarter
+      );
       let combined = { ...submission, ...quarter };
       combined.startDate = new Date(combined.startDate);
       combined.endDate = new Date(combined.endDate);

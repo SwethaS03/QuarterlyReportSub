@@ -1,31 +1,51 @@
 import QuarterAdmin from "../components/QuarterAdmin/QuarterAdmin";
 import YearDropdown from "../components/YearDropdown/YearDropdown";
 import NavbarLogout from "../components/NavbarLogout/NavbarLogout";
+import NavbarBackAndLogout from "../components/NavbarBack&Logout/NavbarBack&Logout";
 import "./QuarterAdminPage.css";
-
+import React, { useEffect, useState } from "react";
+import useAxios from "../hooks/useAxios";
 //import "../index.css";
 function QuarterAdminPage() {
-  return (
+  const [selectedYear, setSelectedYear] = useState(null);
+  const [quarters, setQuarters] = useState([]);
+  const { getWithAuth } = useAxios();
+  const fetchQuarters = async () => {
+    if (selectedYear) {
+      const response = await getWithAuth(`/quarter/${selectedYear}`);
 
-      <div >
-        <NavbarLogout />
-        <YearDropdown />
-        <div className="adm-container">
-          <div className="adm-title-container">
-            <h3 className="adm-h3">QUARTER</h3>
-            <h2 className="adm-h2">Selector</h2>
-          </div>
-          
-          <div className="adm-grid-container">
-              <QuarterAdmin />
-              <QuarterAdmin />
-              <QuarterAdmin />
-              <QuarterAdmin />
-          </div>
-          
+      if (!response.isError) {
+        setQuarters(response.data);
+      } else {
+        alert("Error fetching quarters");
+      }
+    }
+  };
+
+  useEffect(() => {
+    fetchQuarters();
+  }, [selectedYear]);
+
+  return (
+    <div>
+      <NavbarBackAndLogout />
+      <YearDropdown
+        selectedYear={selectedYear}
+        setSelectedYear={setSelectedYear}
+      />
+      <div className="adm-container">
+        <div className="adm-title-container">
+          <h3 className="adm-h3">QUARTER</h3>
+          <h2 className="adm-h2">Selector</h2>
         </div>
-          
+
+        <div className="adm-grid-container">
+          {quarters.map((quarter, index) => (
+            <QuarterAdmin quarter={quarter} key={index} />
+          ))}
+        </div>
       </div>
+    </div>
   );
 }
 

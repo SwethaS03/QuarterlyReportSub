@@ -20,3 +20,27 @@ export function logout() {
   localStorage.removeItem('AUTH_TOKEN')
   localStorage.removeItem('USER')
 }
+
+
+export function formatDateString(startDate, endDate) {
+  if (typeof startDate === 'string') {
+    startDate = new Date(startDate);
+  }
+  if (typeof endDate === 'string') {
+    endDate = new Date(endDate);
+  }
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const startDay = startDate.getUTCDate().toString().padStart(2, '0');
+  const startMonth = months[startDate.getUTCMonth()];
+
+
+  const endDay = endDate.getUTCDate().toString().padStart(2, '0');
+  const endMonth = months[endDate.getUTCMonth()];
+
+
+  const formattedString = `${startDay} ${startMonth}-${endDay} ${endMonth}`;
+
+  return formattedString;
+}
+
+
