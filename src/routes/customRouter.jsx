@@ -7,11 +7,12 @@ import LoginPage from "../pages/LoginPage";
 import PrivateRoute, { PrivateHomeRoute } from "./privateRoute";
 import AdminRouter from "./adminRouter";
 import RepRouter from "./repRouter";
+import NewPasswordPage from "../pages/NewPasswordPage";
+import ForgotPasswordPage from "../pages/ForgotPasswordPage";
 
 export default function CustomRouter() {
   const [user, setUser] = usePersistState("USER", {});
   const [role, setRole] = useState(user.role);
-
   useEffect(() => {
     if ("userObject" in user) {
       setRole(user.userObject.role);
@@ -44,6 +45,15 @@ export default function CustomRouter() {
           </PrivateHomeRoute>
         }
       />
+      <Route 
+        path='/forgot-password'
+        element={<ForgotPasswordPage />}
+      />
+      <Route
+        path='/reset-password/:token' 
+        element={<NewPasswordPage />}
+      />
+
       <Route
         path="/*"
         element={
@@ -52,6 +62,7 @@ export default function CustomRouter() {
           </PrivateRoute>
         }
       />
+      
     </Routes>
   );
 }

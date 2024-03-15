@@ -3,6 +3,10 @@ import "./LoginCard.css";
 import LoginButton from "../LoginButton/LoginButton.jsx";
 import useAxios from "../../hooks/useAxios.jsx";
 import { usePersistState } from "../../hooks/usePersistState.jsx";
+
+  import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 const LoginCard = ({ onLogin }) => {
   const { postWithoutAuth } = useAxios();
   const [username, setUsername] = useState("");
@@ -28,14 +32,37 @@ const LoginCard = ({ onLogin }) => {
       onLogin(response.data.userObject.role);
       setUser(response.data);
       localStorage.setItem("AUTH_TOKEN", response.data.token);
+      toast.success("User logged in successfully",
+        {
+          position:"top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true
+        });
     } else {
-      alert("Invalid Username or Password");
+        toast.error("Invalid Username or Password",
+        {
+          position:"top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true
+        });
     }
-  };
 
+
+
+  };
   return (
+    
     <div>
       <form onSubmit={handleSubmit}>
+        <div>
+          <ToastContainer stacked/>
+        </div>
         <div className="logincard">
           <div className="form-group">
             <input
@@ -52,7 +79,9 @@ const LoginCard = ({ onLogin }) => {
               value={password}
               onChange={handlePasswordChange}
             />
-          </div><br/>
+          </div>
+          <p className='login-forgot-password'>Forgot Password?</p>
+
           <LoginButton />
         </div>
       </form>

@@ -3,6 +3,8 @@ import "./AddDeptCard.css";
 import AddButton from "../AddButton/AddButton.jsx";
 import { useNavigate } from "react-router-dom";
 import useAxios from "../../hooks/useAxios.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddDeptCard = () => {
   const navigate = useNavigate();
@@ -38,16 +40,33 @@ const AddDeptCard = () => {
 
     const response = await postWithAuth("/user", data);
     if (!response.isError) {
-      alert("User added successfully");
+      toast.success("User Added Successfully!",
+        {
+          position:"top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true
+        });
     } else {
-      alert("Error adding user");
+      toast.error("Invalid Username or Password",
+        {
+          position:"top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true
+        });
     }
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className="logincard">
+        <ToastContainer stacked />
+        <div className="addDept-logincard">
           <div className="form-group">
             <input
               type="text"

@@ -13,7 +13,7 @@ const ExistingUsersCard = () => {
     if (!response.isError) {
       setExistingUsers(response.data);
     } else {
-      alert("Error fetching users");
+      'react-toastify/dist/ReactToastify.css';
     }
   };
 

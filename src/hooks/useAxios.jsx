@@ -1,7 +1,7 @@
 import axios from "axios";
 export default function useAxios() {
   const response = { isError: false };
-  const baseURL = "http://localhost:3000";
+  const baseURL = "http://localhost:3000"
   let token = localStorage.getItem("AUTH_TOKEN");
   const axiosInstance = axios.create({
     baseURL,
@@ -14,6 +14,7 @@ export default function useAxios() {
 
   axiosInstance.interceptors.request.use(
     async (req) => {
+      req.headers['ngrok-skip-browser-warning'] = 'true';
       return req;
     },
     function (error) {

@@ -5,6 +5,9 @@ import NavbarBackAndLogout from "../components/NavbarBack&Logout/NavbarBack&Logo
 import "./QuarterAdminPage.css";
 import React, { useEffect, useState } from "react";
 import useAxios from "../hooks/useAxios";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 //import "../index.css";
 function QuarterAdminPage() {
   const [selectedYear, setSelectedYear] = useState(null);
@@ -17,7 +20,15 @@ function QuarterAdminPage() {
       if (!response.isError) {
         setQuarters(response.data);
       } else {
-        alert("Error fetching quarters");
+        toast.error("Error fetching Quarters",
+        {
+          position:"top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true
+        });
       }
     }
   };
@@ -28,6 +39,7 @@ function QuarterAdminPage() {
 
   return (
     <div>
+      <ToastContainer stacked />
       <NavbarBackAndLogout />
       <YearDropdown
         selectedYear={selectedYear}

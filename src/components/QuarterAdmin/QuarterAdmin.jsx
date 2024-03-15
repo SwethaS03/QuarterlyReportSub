@@ -7,6 +7,9 @@ import { formatDateString } from "../../utils/utils";
 import { useActionData, useNavigate } from "react-router-dom";
 import DatePickerModal from "../DatePickerModal/DatepickerModal";
 import useAxios from "../../hooks/useAxios";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+
 const SquareCard = ({ quarter }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
@@ -20,13 +23,30 @@ const SquareCard = ({ quarter }) => {
     });
 
     if (!response.isError) {
-      alert("Quarter updated successfully");
+      toast.success("Quarter Updated successfully",
+        {
+          position:"top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true
+        });
     } else {
-      alert("Error updating quarter");
+      toast.error("Error Updating Quarter",
+        {
+          position:"top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true
+        });
     }
   };
   return (
     <div className="qadmin-square-card">
+      <ToastContainer stacked />
       <DatePickerModal
         setShowModal={setIsModalOpen}
         isOpen={isModalOpen}

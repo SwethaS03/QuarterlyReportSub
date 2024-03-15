@@ -4,6 +4,8 @@ import YearDropdown from "../components/YearDropdown/YearDropdown";
 import useAxios from "../hooks/useAxios";
 import React, { useEffect, useState } from "react";
 import "./QuarterRepPage.css";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 //import "../index.css";
 
@@ -20,7 +22,15 @@ function QuarterRepPage() {
       if (!response.isError) {
         setSubmissions(response.data);
       } else {
-        alert("Error fetching submissions");
+          toast.error("Error fetching submissions",
+        {
+          position:"top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true
+        });
       }
     }
   };
@@ -32,7 +42,15 @@ function QuarterRepPage() {
       if (!response.isError) {
         setQuarters(response.data);
       } else {
-        alert("Error fetching quarters");
+        toast.error("Error fetching submissions",
+        {
+          position:"top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true
+        });
       }
     }
   };
@@ -75,6 +93,7 @@ function QuarterRepPage() {
 
   return (
     <div>
+      <ToastContainer />
       <NavbarLogout />
       <YearDropdown
         selectedYear={selectedYear}

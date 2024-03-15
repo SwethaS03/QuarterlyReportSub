@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./OrderCard.css";
 import useAxios from "../../hooks/useAxios";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const OrderCard = ({ user, fetchData }) => {
   const [order, setOrder] = useState(user.order);
@@ -34,11 +36,27 @@ const OrderCard = ({ user, fetchData }) => {
       });
 
       if (!response.isError) {
-        alert("Order updated successfully");
+        toast.success("Order Updated Successfully!",
+        {
+          position:"top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true
+        });
         fetchData();
         // navigate("/modify-order");
       } else {
-        alert("Error updating order");
+        toast.error("Error Updating Order",
+        {
+          position:"top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true
+        });
       }
     }, 1000);
 
@@ -46,7 +64,9 @@ const OrderCard = ({ user, fetchData }) => {
   };
 
   return (
+    
     <div className="order-card">
+      <ToastContainer stacked/>
       <div className="order-text">
         <h2>{user.role}</h2>
         <p>{user.department}</p>

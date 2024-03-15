@@ -38,7 +38,7 @@ export function formatDateString(startDate, endDate) {
   const endMonth = months[endDate.getUTCMonth()];
 
 
-  const formattedString = `${startDay} ${startMonth}-${endDay} ${endMonth}`;
+  const formattedString = `${startMonth} - ${endMonth}`;
 
   return formattedString;
 }
