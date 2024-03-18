@@ -20,7 +20,7 @@ function LoginPage() {
             <h2 className='new-pwd-h2-span'>Submission</h2>
           </div>
 
-          <NewPassword/>
+          <NewPassword token={token}/>
         </div>
         <div className="new-pwd-right-cotainer">
           <img className="new-pwd-vector-img" src={background}></img>

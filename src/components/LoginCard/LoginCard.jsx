@@ -80,8 +80,10 @@ const LoginCard = ({ onLogin }) => {
               onChange={handlePasswordChange}
             />
           </div>
-          <p className='login-forgot-password'>Forgot Password?</p>
-
+          <div>
+            <a href="/forgot-password" className='login-forgot-password'>Forgot Password?</a>
+          </div>
+        
           <LoginButton />
         </div>
       </form>
