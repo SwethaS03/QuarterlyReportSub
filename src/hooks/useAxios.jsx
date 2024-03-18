@@ -1,7 +1,10 @@
 import axios from "axios";
+// require('dotenv').config()
+
+
 export default function useAxios() {
   const response = { isError: false };
-  const baseURL = "http://localhost:3000"
+  const baseURL =  "https://e7b2-49-206-118-205.ngrok-free.app"
   let token = localStorage.getItem("AUTH_TOKEN");
   const axiosInstance = axios.create({
     baseURL,
