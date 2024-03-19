@@ -1,10 +1,9 @@
 import axios from "axios";
 // require('dotenv').config()
 
-
 export default function useAxios() {
   const response = { isError: false };
-  const baseURL =  "https://e7b2-49-206-118-205.ngrok-free.app"
+  const baseURL = "http://localhost:3000";
   let token = localStorage.getItem("AUTH_TOKEN");
   const axiosInstance = axios.create({
     baseURL,
@@ -17,7 +16,7 @@ export default function useAxios() {
 
   axiosInstance.interceptors.request.use(
     async (req) => {
-      req.headers['ngrok-skip-browser-warning'] = 'true';
+      req.headers["ngrok-skip-browser-warning"] = "true";
       return req;
     },
     function (error) {

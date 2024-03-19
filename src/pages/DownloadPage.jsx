@@ -6,9 +6,8 @@ import { useParams } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 import React, { useState, useEffect } from "react";
 import { saveAs } from "file-saver";
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function DownloadPage() {
   const { getWithAuth, getFileWithAuth } = useAxios();
@@ -20,15 +19,14 @@ function DownloadPage() {
     if (!response.isError) {
       setDownloads(response.data);
     } else {
-        toast.error("Error fetching data",
-        {
-          position:"top-center",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: true,
-          newestOnTop: true
-        });
+      toast.error("Error fetching data", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        newestOnTop: true,
+      });
     }
   };
 
@@ -49,36 +47,30 @@ function DownloadPage() {
     const response = await getFileWithAuth(
       `/submission/download/all/${year}/${quarter}`
     );
-    const fileName = `Report_${year}_Quarter${quarter}_consolidated.pdf`;
+    const fileName = `Report_${year}_Quarter-${quarter}_consolidated.pdf`;
     if (!response.isError) {
       const fileBuffer = response.data;
       if (fileBuffer) {
         const blob = new Blob([fileBuffer]);
         saveAs(blob, fileName);
-      } else {
-        toast.error("Submission not found",
-        {
-          position:"top-center",
+        toast.success("Report Downloaded Successfully!", {
+          position: "top-center",
           autoClose: 5000,
           hideProgressBar: true,
           closeOnClick: false,
           pauseOnHover: true,
-          newestOnTop: true
+          newestOnTop: true,
+        });
+      } else {
+        toast.error("Submission not found", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true,
         });
       }
-    }
-    if (!response.isError) {
-      setDownloads(response.data);
-    } else {
-        toast.error("Error fetching data",
-        {
-          position:"top-center",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: true,
-          newestOnTop: true
-        });
     }
   };
 
@@ -96,7 +88,9 @@ function DownloadPage() {
             downloads.map((download, index) => (
               <DownloadCard download={download} key={index} />
             ))}
-            <div className="download-page-button-container">
+          <div className="download-page-button-container"></div>
+        </div>
+        <div className="download-btn-div">
           <button
             disabled={downloadButtonDisabled}
             onClick={handleDownload}
@@ -105,8 +99,6 @@ function DownloadPage() {
             Download
           </button>
         </div>
-        </div>
-        
       </div>
     </div>
   );

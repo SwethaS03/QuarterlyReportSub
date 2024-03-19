@@ -2,10 +2,6 @@ import React from "react";
 import "./DownloadCard.css";
 
 const DownloadCard = ({ download }) => {
-  const handleClick = () => {
-    // Handle login logic here
-  };
-
   return (
     <div className="download-card">
       <div className="text">
@@ -19,7 +15,7 @@ const DownloadCard = ({ download }) => {
             : "card-status-pending"
         }
       >
-        {download.status}
+        {download.status === "NOT_STARTED" ? "Not Started" : download.status}
       </p>
     </div>
   );

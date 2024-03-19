@@ -4,10 +4,9 @@ import AddButton from "../AddButton/AddButton.jsx";
 import { useNavigate } from "react-router-dom";
 import useAxios from "../../hooks/useAxios.jsx";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const AddDeptCard = () => {
-  const navigate = useNavigate();
   const { postWithAuth } = useAxios();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -40,25 +39,23 @@ const AddDeptCard = () => {
 
     const response = await postWithAuth("/user", data);
     if (!response.isError) {
-      toast.success("User Added Successfully!",
-        {
-          position:"top-center",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: true,
-          newestOnTop: true
-        });
+      toast.success("User Added Successfully!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        newestOnTop: true,
+      });
     } else {
-      toast.error("Invalid Username or Password",
-        {
-          position:"top-center",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: true,
-          newestOnTop: true
-        });
+      toast.error("Error Adding User! Contact admin.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        newestOnTop: true,
+      });
     }
   };
 

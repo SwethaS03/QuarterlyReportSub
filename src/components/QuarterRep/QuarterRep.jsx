@@ -7,8 +7,8 @@ import { saveAs } from "file-saver";
 import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
 import { formatDateString } from "../../utils/utils";
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SquareCard = ({ submission }) => {
   const { getFileWithAuth, putFileWithAuth } = useAxios();
@@ -27,10 +27,7 @@ const SquareCard = ({ submission }) => {
   };
 
   const handleFiles = (files) => {
-    setSelectedFiles((prevSelectedFiles) => [
-      ...prevSelectedFiles,
-      ...files,
-    ]);
+    setSelectedFiles((prevSelectedFiles) => [...prevSelectedFiles, ...files]);
     const fileNames = files.map((file) => file.name);
     setUploadedFileNames((prevFileNames) => [...prevFileNames, ...fileNames]);
   };
@@ -55,28 +52,25 @@ const SquareCard = ({ submission }) => {
 
     if (!response.isError) {
       setIsModalOpen(false);
-      toast.success("Files Uploaded successfully",
-        {
-          position:"top-center",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: true,
-          newestOnTop: true
-        });
-      navigate("/");
+      toast.success("Files Uploaded successfully", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        newestOnTop: true,
+      });
       setSelectedFiles([]);
       setUploadedFileNames([]);
     } else {
-      toast.error("Error Uploading files",
-        {
-          position:"top-center",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: true,
-          newestOnTop: true
-        });
+      toast.error("Error Uploading files", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        newestOnTop: true,
+      });
     }
   };
 
@@ -93,33 +87,39 @@ const SquareCard = ({ submission }) => {
           blob,
           submission.objectURL.split("/").pop() ?? "downloaded_file.pdf"
         );
-      } else {
-        toast.error("Submission not found!",
-        {
-          position:"top-center",
+        toast.success("Submission downloaded successfully!", {
+          position: "top-center",
           autoClose: 5000,
           hideProgressBar: true,
           closeOnClick: false,
           pauseOnHover: true,
-          newestOnTop: true
+          newestOnTop: true,
+        });
+      } else {
+        toast.error("Submission not found!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          newestOnTop: true,
         });
       }
     } else {
-      toast.error("Error downloading submission",
-      {
-        position:"top-center",
+      toast.error("Error downloading submission", {
+        position: "top-center",
         autoClose: 5000,
         hideProgressBar: true,
         closeOnClick: false,
         pauseOnHover: true,
-        newestOnTop: true
+        newestOnTop: true,
       });
     }
   };
 
   return (
-    <div className="square-card" >
-      <ToastContainer stacked/>
+    <div className="square-card">
+      <ToastContainer stacked />
       <div className="top-left">
         <div className="quarter-title">Quarter</div>
         <div className="gradient-number">
@@ -132,8 +132,11 @@ const SquareCard = ({ submission }) => {
             {formatDateString(submission.startDate, submission.endDate)}
           </p>
         </div>
-        <div className="icon-container" onDrop={handleDrop}
-          onDragOver={handleDragOver}>
+        <div
+          className="icon-container"
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+        >
           <button
             onClick={() => setIsModalOpen(true)}
             disabled={isUploadDisabled}
@@ -168,7 +171,15 @@ const SquareCard = ({ submission }) => {
           </button>
           <Modal
             isOpen={isModalOpen}
-            onRequestClose={() => setIsModalOpen(false)}
+            onAfterClose={() => {
+              setSelectedFiles([]);
+              setUploadedFileNames([]);
+            }}
+            onRequestClose={() => {
+              setIsModalOpen(false);
+              setSelectedFiles([]);
+              setUploadedFileNames([]);
+            }}
             className="custom-modal"
           >
             <h2>Select Files</h2>
@@ -182,11 +193,34 @@ const SquareCard = ({ submission }) => {
               <h3>Uploaded Files:</h3>
               <ul>
                 {uploadedFileNames.map((fileName, index) => (
-                  <li key={index}>{fileName}</li>
+                  <li key={index}>
+                    {fileName}{" "}
+                    <button
+                      onClick={() => {
+                        setSelectedFiles((prevSelectedFiles) =>
+                          prevSelectedFiles.filter(
+                            (_, fileIndex) => fileIndex !== index
+                          )
+                        );
+                        setUploadedFileNames((prevFileNames) =>
+                          prevFileNames.filter(
+                            (_, fileIndex) => fileIndex !== index
+                          )
+                        );
+                      }}
+                    >
+                      Remove
+                    </button>
+                  </li>
                 ))}
               </ul>
             </div>
-            <button onClick={handleUpload}>Upload</button>
+            <button
+              onClick={handleUpload}
+              disabled={selectedFiles.length === 0}
+            >
+              Upload
+            </button>
           </Modal>
         </div>
       </div>
