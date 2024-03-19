@@ -42,9 +42,18 @@ const SquareCard = ({ submission }) => {
   };
   const handleUpload = async () => {
     const formData = new FormData();
+    const uploadToastId = toast.info("Uploading...", {
+      position: "top-center",
+      autoClose: false, // Keep toast open until process is done
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      newestOnTop: true,
+    });
     selectedFiles.forEach((file) => {
       formData.append("files", file);
     });
+    
     const response = await putFileWithAuth(
       `/submission/${submission.uuid}`,
       formData
@@ -52,23 +61,19 @@ const SquareCard = ({ submission }) => {
 
     if (!response.isError) {
       setIsModalOpen(false);
-      toast.success("Files Uploaded successfully", {
-        position: "top-center",
+      toast.update(uploadToastId, {
+        render: "Files uploaded successfully!",
+        type: "success",
         autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: false,
-        pauseOnHover: true,
         newestOnTop: true,
       });
       setSelectedFiles([]);
       setUploadedFileNames([]);
     } else {
-      toast.error("Error Uploading files", {
-        position: "top-center",
+      toast.update(uploadToastId, {
+        render: "Error uploading files!",
+        type: "error",
         autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: false,
-        pauseOnHover: true,
         newestOnTop: true,
       });
     }

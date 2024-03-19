@@ -44,6 +44,14 @@ function DownloadPage() {
   }, [downloads]);
 
   const handleDownload = async () => {
+    const downloadToastId = toast.info("Downloading...", {
+      position: "top-center",
+      autoClose: false, // Keep toast open until process is done
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      newestOnTop: true,
+    });
     const response = await getFileWithAuth(
       `/submission/download/all/${year}/${quarter}`
     );
@@ -53,21 +61,17 @@ function DownloadPage() {
       if (fileBuffer) {
         const blob = new Blob([fileBuffer]);
         saveAs(blob, fileName);
-        toast.success("Report Downloaded Successfully!", {
-          position: "top-center",
+        toast.update(downloadToastId, {
+          render: "Report downloaded successfully!",
+          type: "success",
           autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: true,
           newestOnTop: true,
         });
       } else {
-        toast.error("Submission not found", {
-          position: "top-center",
+        toast.update(downloadToastId, {
+          render: "Submission not found!",
+          type: "error",
           autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: true,
           newestOnTop: true,
         });
       }
