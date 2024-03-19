@@ -64,7 +64,7 @@ const AddDeptCard = () => {
       <form onSubmit={handleSubmit}>
         <ToastContainer stacked />
         <div className="addDept-logincard">
-          <div className="form-group">
+          <div className="add-dept-card-form-group">
             <input
               type="text"
               placeholder="Username"
@@ -72,7 +72,7 @@ const AddDeptCard = () => {
               onChange={handleUsernameChange}
             />
           </div>
-          <div className="form-group">
+          <div className="add-dept-card-form-group">
             <input
               type="password"
               placeholder="Password"
@@ -80,7 +80,7 @@ const AddDeptCard = () => {
               onChange={handlePasswordChange}
             />
           </div>
-          <div className="form-group">
+          <div className="add-dept-card-form-group">
             <input
               type="text"
               placeholder="Section"
@@ -88,7 +88,7 @@ const AddDeptCard = () => {
               onChange={handleSectionChange}
             />
           </div>
-          <div className="form-group">
+          <div className="add-dept-card-form-group">
             <input
               type="number"
               placeholder="Order"

@@ -53,7 +53,7 @@ const ForgotPassword = () => {
           <ToastContainer stacked/>
         </div>
         <div className="logincard">
-            <div className="form-group">
+            <div className="forgot-password-form-group">
           <input
             type="text"
             placeholder="Email"
