@@ -75,6 +75,14 @@ const SquareCard = ({ submission }) => {
   };
 
   const downloadSubmission = async () => {
+    const downloadToastId = toast.info("Downloading...", {
+      position: "top-center",
+      autoClose: false, // Keep toast open until process is done
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      newestOnTop: true,
+    });
     const response = await getFileWithAuth(
       `/submission/download/${submission.uuid}`
     );
@@ -87,32 +95,23 @@ const SquareCard = ({ submission }) => {
           blob,
           submission.objectURL.split("/").pop() ?? "downloaded_file.pdf"
         );
-        toast.success("Submission downloaded successfully!", {
-          position: "top-center",
+        toast.update(downloadToastId, {
+          render: "Submission downloaded successfully!",
+          type: "success",
           autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: true,
-          newestOnTop: true,
         });
       } else {
-        toast.error("Submission not found!", {
-          position: "top-center",
+        toast.update(downloadToastId, {
+          render: "Submission not found!",
+          type: "error",
           autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: true,
-          newestOnTop: true,
         });
       }
     } else {
-      toast.error("Error downloading submission", {
-        position: "top-center",
+      toast.update(downloadToastId, {
+        render: "Error downloading submission",
+        type: "error",
         autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: false,
-        pauseOnHover: true,
-        newestOnTop: true,
       });
     }
   };
