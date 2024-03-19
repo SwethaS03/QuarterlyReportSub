@@ -5,8 +5,8 @@ import NavbarBackAndLogout from "../components/NavbarBack&Logout/NavbarBack&Logo
 import "./QuarterAdminPage.css";
 import React, { useEffect, useState } from "react";
 import useAxios from "../hooks/useAxios";
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 //import "../index.css";
 function QuarterAdminPage() {
@@ -20,14 +20,13 @@ function QuarterAdminPage() {
       if (!response.isError) {
         setQuarters(response.data);
       } else {
-        toast.error("Error fetching Quarters",
-        {
-          position:"top-center",
+        toast.error("Error fetching Quarters", {
+          position: "top-center",
           autoClose: 5000,
           hideProgressBar: true,
           closeOnClick: false,
           pauseOnHover: true,
-          newestOnTop: true
+          newestOnTop: true,
         });
       }
     }

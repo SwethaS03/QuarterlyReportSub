@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function useAxios() {
   const response = { isError: false };
-  const baseURL = "http://localhost:3000";
+  const baseURL = import.meta.BACKEND_HOST;
   let token = localStorage.getItem("AUTH_TOKEN");
   const axiosInstance = axios.create({
     baseURL,

@@ -4,8 +4,8 @@ import YearDropdown from "../components/YearDropdown/YearDropdown";
 import useAxios from "../hooks/useAxios";
 import React, { useEffect, useState } from "react";
 import "./QuarterRepPage.css";
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 //import "../index.css";
 
@@ -22,14 +22,13 @@ function QuarterRepPage() {
       if (!response.isError) {
         setSubmissions(response.data);
       } else {
-          toast.error("Error fetching submissions",
-        {
-          position:"top-center",
+        toast.error("Error fetching submissions", {
+          position: "top-center",
           autoClose: 5000,
           hideProgressBar: true,
           closeOnClick: false,
           pauseOnHover: true,
-          newestOnTop: true
+          newestOnTop: true,
         });
       }
     }
@@ -42,14 +41,13 @@ function QuarterRepPage() {
       if (!response.isError) {
         setQuarters(response.data);
       } else {
-        toast.error("Error fetching submissions",
-        {
-          position:"top-center",
+        toast.error("Error fetching submissions", {
+          position: "top-center",
           autoClose: 5000,
           hideProgressBar: true,
           closeOnClick: false,
           pauseOnHover: true,
-          newestOnTop: true
+          newestOnTop: true,
         });
       }
     }
