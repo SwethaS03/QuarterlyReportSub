@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
-.form-group {
+.add-dept-card-form-group {
     margin-left: 0px;
     margin-top: 15px;
     position: relative;
@@ -12,7 +12,7 @@
     background-color: transparent;
 }
 
-.form-group label {
+.add-dept-card-form-group label {
     display: block;
     color: black;
     margin-bottom: 0px;
@@ -28,7 +28,7 @@ p {
     text-align: right;
 }
 
-.form-group input {
+.add-dept-card-form-group input {
     width: 250px;
     padding: 15px 40px 15px 10px;
     padding-left: 30px;
@@ -41,3 +41,10 @@ p {
     color: black;
     background-color: white;
 }
+
+@media (max-width: 768px) {
+    .button {
+        width: 250px;
+        font-size: 18px;
+    }
+} 

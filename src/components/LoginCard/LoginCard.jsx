@@ -64,7 +64,7 @@ const LoginCard = ({ onLogin }) => {
           <ToastContainer stacked/>
         </div>
         <div className="logincard">
-          <div className="form-group">
+          <div className="login-card-form-group">
             <input
               type="text"
               placeholder="Username"
@@ -72,7 +72,7 @@ const LoginCard = ({ onLogin }) => {
               onChange={handleUsernameChange}
             />
           </div>
-          <div className="form-group">
+          <div className="login-card-form-group">
             <input
               type="password"
               placeholder="Password"
